@@ -1,0 +1,6 @@
+<div class="hostbox">
+  <a href="{{host.drilldown}}">{{host.name}}</a>
+  <ul class="list-group hostalerts">
+    {{#alertlist alerts}}<li class="list-group-item {{alert.severityclass}}">{{alert.name}}</li>{{/list}}
+  </ul>
+</div>
