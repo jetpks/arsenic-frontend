@@ -21,7 +21,7 @@
       , processData: true
       , success: handleKetchup
       , failure: function(data, status, xhr) {
-          console.log('shit broke.', data, status, xhr);
+          console.error('shit broke.', data, status, xhr);
         }
     });
   }
@@ -44,7 +44,7 @@
       next();
     }, function(error) {
       if(typeof error !== 'undefined') {
-        console.log("Something went wrong mapping alerts to hosts. Check console.");
+        console.error("Something went wrong mapping alerts to hosts. Check console.");
         console.error(error);
         console.error(by_box);
         return;
@@ -59,15 +59,10 @@
   function redrawBoxen(err, results) {
     var target = $('#alertarea');
     if(typeof err !== 'undefined') {
-      console.log("Something went wrong in by_box map flatten. Check console.");
+      console.error("Something went wrong in by_box map flatten. Check console.");
       return;
     }
     async.each(results, function(box, next) {
-      console.log("Appending box to #alertarea");
-      console.log(alertarea);
-      console.log(box);
-      console.log(h_tp);
-      console.log(h_tp(box));
       target.append(h_tp(box));
       next();
     }, noop);
@@ -94,7 +89,6 @@
   function noop() {}
 
   function prep_templates(callback) {
-    console.log($('#hosttemplate').html());
     h_tp = Handlebars.compile($("#hosttemplate").html());
     callback();
   }
