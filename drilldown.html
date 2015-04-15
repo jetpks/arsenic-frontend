@@ -7,15 +7,15 @@
 dP    Yb 8    Y88P `Y88P 8   8 8 `Y8P 
 -->
 <head>
-  <title>Arsenic - MOX Monitoring Dashboard</title>
+  <title>Arsenic - Drilldown</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script id="hosttemplate" type="text/x-handlebars-template">
     <div class="hostbox">
       <ul class="list-group hostalerts">
         <li class="list-group-item list-group-item-danger">
-          <a class="drilldown-link" href="/drilldown.html?box={{host}}">{{host}}</a>
-          <a href="/drilldown.html?box={{host}}&ack=true">
+          <a class="drilldown-link" href="/drilldown?box={{host}}">{{host}}</a>
+          <a href="/drilldown?box={{host}}&ack=true">
             <button type="button" class="btn btn-danger btn-sm ack-btn" data-box="{{host}}">
               <span class="glyphicon glyphicon-flash"></span> ack
             </button>
@@ -30,7 +30,7 @@ dP    Yb 8    Y88P `Y88P 8   8 8 `Y8P
   <script src="js/handlebars.js"></script>
   <script src="js/socket.io.min.js"></script>
   <script src="js/async.js"></script>
-  <script src="js/arsenic.js"></script>
+  <!--<script src="js/arsenic.js"></script>-->
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -51,6 +51,7 @@ dP    Yb 8    Y88P `Y88P 8   8 8 `Y8P
       </div><!--/.nav-collapse -->
     </div>
   </nav>
+  <h1>Placeholder!</h1>
   <div class="container" id="alertarea">
   </div>
 
